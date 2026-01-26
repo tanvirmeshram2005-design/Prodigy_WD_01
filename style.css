@@ -1,0 +1,64 @@
+/* Custom Properties for consistency */
+:root {
+    --text-color: #ffffff;
+    --accent-color: #00d4ff;
+    --nav-bg: rgba(255, 255, 255, 0.05);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* The Scroll Effect Class */
+.navbar.scrolled {
+    padding: 15px 80px;
+    background: rgba(15, 12, 41, 0.8); /* Darker on scroll */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Fancy Hover Animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
